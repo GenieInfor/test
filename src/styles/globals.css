@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --color-primary: #f97316;
+  --color-primary-dark: #ea580c;
+  --color-dark: #0a0a0f;
+  --color-dark-2: #12121a;
+  --color-dark-3: #1a1a27;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-dark);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Scrollbar personnalisé */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-dark-2);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 3px;
+}
+
+/* Glass morphism */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-dark {
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Texte gradient */
+.text-gradient {
+  background: linear-gradient(135deg, #f97316, #fb923c, #fdba74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Fond avec particules animées */
+.bg-animated {
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(249, 115, 22, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(251, 146, 60, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(234, 88, 12, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a0f 0%, #12121a 100%);
+}
+
+/* Fond admin */
+.bg-admin {
+  background: 
+    radial-gradient(ellipse at 0% 0%, rgba(249, 115, 22, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 100% 100%, rgba(234, 88, 12, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, #0a0a0f 0%, #0f0f18 100%);
+}
+
+/* Bouton principal */
+.btn-primary {
+  @apply bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30 active:scale-95;
+}
+
+.btn-outline {
+  @apply border border-orange-500/50 text-orange-400 hover:bg-orange-500/10 font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300;
+}
+
+.btn-success {
+  @apply bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300;
+}
+
+/* Carte produit */
+.product-card {
+  @apply glass rounded-2xl overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/20;
+}
+
+/* Input */
+.input-field {
+  @apply w-full bg-white/5 border border-white/10 text-white placeholder-white/30 rounded-xl px-4 py-3 focus:outline-none focus:border-orange-500/60 focus:bg-white/10 transition-all duration-300;
+}
+
+/* Badge statut */
+.badge-pending {
+  @apply bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.badge-validated {
+  @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+.badge-cancelled {
+  @apply bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-1 rounded-full text-xs font-semibold;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(249, 115, 22, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(249, 115, 22, 0.6); }
+}
+
+.pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Admin table */
+.admin-table {
+  @apply w-full text-sm;
+}
+
+.admin-table th {
+  @apply py-3 px-4 text-left text-orange-400 font-semibold border-b border-white/10 whitespace-nowrap;
+}
+
+.admin-table td {
+  @apply py-3 px-4 border-b border-white/5 text-white/80;
+}
+
+.admin-table tr:hover td {
+  @apply bg-white/5;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .admin-table {
+    font-size: 0.75rem;
+  }
+  .admin-table th,
+  .admin-table td {
+    @apply px-2 py-2;
+  }
+}

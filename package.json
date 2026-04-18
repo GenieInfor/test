@@ -1,0 +1,41 @@
+{
+  "name": "shop-cid",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "init-db": "node scripts/init-db.js",
+    "migrate": "node scripts/migrate.js",
+    "reset-admin": "node scripts/reset-admin.js"
+  },
+  "dependencies": {
+    "next": "15.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "@libsql/client": "^0.14.0",
+    "pg": "^8.11.5",
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.2.4",
+    "recharts": "^2.12.7",
+    "react-hot-toast": "^2.4.1",
+    "lucide-react": "^0.383.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/pg": "^8.11.6",
+    "typescript": "^5",
+    "tailwindcss": "^3.4.3",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "eslint": "^8",
+    "eslint-config-next": "15.2.4"
+  }
+}

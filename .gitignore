@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.env
+.env.local
+data/shop.db
+public/uploads/
+.DS_Store
+Thumbs.db
+*.log
+ecosystem.config.js.bak
